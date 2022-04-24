@@ -21,6 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div>
+        textarea:<textarea name="description" rows=5 cols=40>Helooo</textarea>
+    </div>
+
+    <div>
         password: <input type="password" name="password">
     </div>
 
