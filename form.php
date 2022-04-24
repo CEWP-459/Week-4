@@ -1,3 +1,9 @@
+<?php
+
+var_dump($_GET);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +12,7 @@
 </head>
 <body>
 
-<form action="process_form.php"> 
+<form> 
 
     <input name="search">
 
