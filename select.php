@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post">
 
-    <select name="country">
+    <select name="country" multiple>
         <option value="germany">Germany</option>
         <option value="france">France</option>
         <option value="uk" selected>United Kingdom</option>
