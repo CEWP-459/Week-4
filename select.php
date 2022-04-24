@@ -14,13 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post">
 
-    <select name="country[]" multiple>
-        <option value="germany">Germany</option>
-        <option value="france">France</option>
-        <option value="uk" selected>United Kingdom</option>
-        <option value="brazil">Brazil</option>
-        <option value="canada">Canada</option>
-        <option value="usa">United States</option>
+    <select name="country">
+        <optgroup label="Europe">
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+            <option value="uk" selected>United Kingdom</option>
+        </optgroup>
+        <optgroup label="America">
+            <option value="brazil">Brazil</option>
+            <option value="canada">Canada</option>
+            <option value="usa">United States</option>
+        </optgroup>
     </select>
 
     <button>Send</button>
