@@ -2,9 +2,9 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require 'includes/database-connection.php'; 
     $sql = "INSERT INTO article (title, content, published_at) 
-            VALUES ('" . $_POST['title'] . "','" 
-                       . $_POST['content'] . "','" 
-                       . $_POST['published_at'] . "')";                  
+            VALUES ('" . mysqli_real_escape_string($connection, $_POST['title']) . "','" 
+                       . mysqli_real_escape_string($connection, $_POST['content']) . "','" 
+                       . mysqli_real_escape_string($connection, $_POST['published_at']) . "')";                  
     try {
         $result = mysqli_query($connection, $sql); 
         if ($result) {
