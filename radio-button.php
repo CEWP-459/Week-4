@@ -21,13 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>Which colours do you like?</p>
 
     <div>
-        <input type="radio"> Red
+        <input type="radio" name="color" value="red"> Red
     </div>
     <div>
-        <input type="radio"> Green
+        <input type="radio" name="color" value="green"> Green
     </div>
     <div>
-        <input type="radio"> Blue
+        <input type="radio" name="color" value="blue"> Blue
     </div>
 
     <button>Send</button>
