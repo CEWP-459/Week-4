@@ -1,7 +1,11 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     var_dump($_POST);
+
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +16,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<form method="post"> 
+<form method="post">
+
+    <p>Which colours do you like?</p>
 
     <div>
-        <input type="checkbox" name="terms" value="yes" checked> I agree to the terms and conditions
+        <input type="checkbox" name="red"> Red
     </div>
+    <div>
+        <input type="checkbox" name="green"> Green
+    </div>
+    <div>
+        <input type="checkbox" name="blue"> Blue
+    </div>
+
     <button>Send</button>
 
 </form>
