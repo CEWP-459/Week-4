@@ -21,13 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>Which colours do you like?</p>
 
     <div>
-        <input type="checkbox" name="red"> Red
+        <input type="checkbox" value="red" name="color[]"> Red
     </div>
     <div>
-        <input type="checkbox" name="green"> Green
+        <input type="checkbox" value="green" name="color[]"> Green
     </div>
     <div>
-        <input type="checkbox" name="blue"> Blue
+        <input type="checkbox" value="blue" name="color[]"> Blue
     </div>
 
     <button>Send</button>
