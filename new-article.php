@@ -1,6 +1,10 @@
 <?php
+
+ini_set('display_errors', 1); 
+require 'includes/database-connection.php'; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require 'includes/database-connection.php'; 
+    $connection = getDB();
     $sql = "INSERT INTO article (title, content, published_at) 
             VALUES (?,?,?)";                  
     try {
@@ -20,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "ERROR: " . $e; 
     }
 }
+
 ?>
 
 <?php require 'includes/header.php'; ?>

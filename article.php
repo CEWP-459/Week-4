@@ -3,6 +3,7 @@
     ini_set('display_errors', 1); 
     require 'includes/database-connection.php'; 
     
+    $connection = getDB();
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $sql = "SELECT * FROM article WHERE id = {$_GET['id']}";
         // var_dump($sql);

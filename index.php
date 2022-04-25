@@ -3,6 +3,7 @@
     ini_set('display_errors', 1); 
     require 'includes/database-connection.php'; 
 
+    $connection = getDB();
     $sql = "SELECT * FROM article"; 
     try {
         $result = mysqli_query($connection, $sql); 
