@@ -12,7 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<form method="post" novalidate>
+<form method="post">
+
+    <div>
+        postcode: <input name="postcode"
+        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+    </div>
 
     <div>
         email: <input type="email" name="email" required>
