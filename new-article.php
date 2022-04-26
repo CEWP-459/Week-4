@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = "INSERT INTO article (title, content, published_at) VALUES (?, ?, ?)";
 
-        $stmt = mysqli_prepare($conn, $sql);
+        $stmt = mysqli_prepare($connection, $sql);
 
         if ($stmt === false) {
 
-            echo mysqli_error($conn);
+            echo mysqli_error($connection);
 
         } else {
 
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_execute($stmt)) {
 
-                $id = mysqli_insert_id($conn);
+                $id = mysqli_insert_id($connection);
                 echo "Inserted record with ID: $id";
 
             } else {
@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 <?php require 'includes/header.php'; ?>
 
 <h2>New article</h2>
@@ -97,11 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div>
         <label for="published_at">Publication date and time</label>
-        <input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($published_at); ?>">
+        <input type="text" name="published_at" id="published_at" value="<?= htmlspecialchars($published_at); ?>">
     </div>
 
     <button>Add</button>
 
 </form>
-
-<?php require 'includes/footer.php'; ?>
