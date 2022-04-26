@@ -4,8 +4,15 @@ ini_set('display_errors', 1);
 require 'includes/database-connection.php'; 
 
 $errors = [];
+$title = '';
+$content = '';
+$published_at = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $published_at = $_POST['published_at'];
 
     if ($_POST['title'] == '') {
         $errors[] = "Title should not be empty!";
@@ -21,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             $sqlStmt = mysqli_prepare($connection, $sql); 
             if ($sqlStmt) {
-                mysqli_stmt_bind_param($sqlStmt, 'sss', $_POST['title'], $_POST['content'], $_POST['published_at']);
+                mysqli_stmt_bind_param($sqlStmt, 'sss', $title, $content, $published_at);
                 if (mysqli_stmt_execute($sqlStmt)) {
                     $id = mysqli_stmt_insert_id($sqlStmt);
                     echo "Inserted Record was at ID: {$id}";
@@ -54,17 +61,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div>
         <label for="title">Title</label>
-        <input name="title" id="title" placeholder="Article title">
+        <input name="title" id="title" placeholder="Article title" value=<?=$title?>>
     </div>
 
     <div>
         <label for="content">Content</label>
-        <textarea name="content" rows="4" cols="40" id="content" placeholder="Article content"></textarea>
+        <textarea name="content" rows="4" cols="40" id="content" placeholder="Article content" value=<?=$content?>></textarea>
     </div>
 
     <div>
         <label for="published_at">Publication date and time</label>
-        <input type="datetime-local" name="published_at" id="published_at">
+        <input type="datetime-local" name="published_at" id="published_at" value=<?=$published_at?>>
     </div>
 
     <button>Add</button>
