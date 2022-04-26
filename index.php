@@ -21,6 +21,7 @@
 <?php require 'includes/header.php'; ?>
 <body>
     <h1>Blog</h1>
+    <a href="./new-article.php">New Article</a>
     <?php if (empty($articles)) : ?>
         <h2> No articles found! </h2>
     <?php else: ?>    
