@@ -28,9 +28,9 @@
             <?php foreach($articles as $article): ?>
             <li>
                 <h3>Title:</h3>
-                <a href="single-article.php?id=<?=$article['id']?>"><?= $article['title'] ?></a>
+                <a href="single-article.php?id=<?=$article['id']?>"><?= htmlspecialchars($article['title']); ?></a>
                 <h3>Content:</h3>
-                <?= $article['content'] ?>
+                <?= htmlspecialchars($article['content']); ?>
             </li>
             <?php endforeach; ?>
         </ol>

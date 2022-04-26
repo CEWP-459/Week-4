@@ -32,9 +32,9 @@
         <ol>
             <li>
                 <h3>Title:</h3>
-                <?= $article['title'] ?>
+                <?= htmlspecialchars($article['title']); ?>
                 <h3>Content:</h3>
-                <?= $article['content'] ?>
+                <?= htmlspecialchars($article['content']); ?>
             </li>
         </ol>
     <?php endif; ?>    
