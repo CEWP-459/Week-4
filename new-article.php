@@ -1,6 +1,7 @@
 <?php
 
-require 'includes/database.php';
+ini_set('display_errors', 1); 
+require 'includes/database-connection.php'; 
 
 $errors = [];
 $title = '';
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($errors)) {
 
-        $conn = getDB();
+        $connection = getDB();
 
         $sql = "INSERT INTO article (title, content, published_at) VALUES (?, ?, ?)";
 
